@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".inicio_sesion">
 
     <TextView
         android:layout_marginTop="10dp"
@@ -92,35 +92,35 @@ usado contamina por su mal uso 1000 litros de agua "
 
 
         <ImageView
-            android:id="@+id/iconHome"
+            android:id="@+id/home_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_launcher_home" />
 
         <ImageView
-            android:id="@+id/iconCategorias"
+            android:id="@+id/categoria_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_launcher_fillet" />
 
         <ImageView
-            android:id="@+id/iconPregunta"
+            android:id="@+id/sabias_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_launcher_help" />
 
         <ImageView
-            android:id="@+id/iconLugar"
+            android:id="@+id/ubi_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_launcher_place_out" />
 
         <ImageView
-            android:id="@+id/iconEstadistica"
+            android:id="@+id/estadistica_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

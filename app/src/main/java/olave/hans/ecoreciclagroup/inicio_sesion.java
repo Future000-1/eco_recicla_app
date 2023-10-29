@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class inicio_sesion extends AppCompatActivity {
         Button btnInicio;
         TextView tvRegistro;
     @Override
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        setContentView(R.layout.activity_main);
 
 
     }

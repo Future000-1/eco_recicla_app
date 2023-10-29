@@ -21,6 +21,10 @@ import com.google.android.material.navigation.NavigationView;
 public class identificaAceite extends AppCompatActivity {
 
     ImageView botonRegreso;
+    ImageView botonimDomestico;
+    ImageView botonimfritos;
+    ImageView botonimAutomotriz;
+    ImageView botonimLubricacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,65 @@ public class identificaAceite extends AppCompatActivity {
                 startActivity(regresoHome);
             }
         });
+
+
+        //codigos botones que lleven a las vistas de cada tipo de aceite
+
+
+        botonimDomestico= findViewById(R.id.imDomestico);
+        Intent irdomestico= new Intent(getApplicationContext(),
+                aceite_domestico.class
+        );
+
+        botonimDomestico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(irdomestico);
+            }
+        });
+
+
+
+
+        botonimfritos= findViewById(R.id.imfritos);
+        Intent irfritos= new Intent(getApplicationContext(),
+                aceite_industria.class
+        );
+
+        botonimfritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(irfritos);
+            }
+        });
+
+
+
+        botonimLubricacion= findViewById(R.id.imlubricacion);
+        Intent irlubricacion= new Intent(getApplicationContext(),
+                aceite_hidraulico.class
+        );
+
+        botonimLubricacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(irlubricacion);
+            }
+        });
+
+
+        botonimAutomotriz= findViewById(R.id.imAutomotriz);
+        Intent irautomotriz= new Intent(getApplicationContext(),
+                aceite_hidraulico.class
+        );
+
+        botonimAutomotriz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(irautomotriz);
+            }
+        });
+
 
     }
 

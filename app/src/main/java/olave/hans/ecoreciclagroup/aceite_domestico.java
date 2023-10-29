@@ -7,31 +7,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class EstadisticasActivity extends AppCompatActivity {
+public class aceite_domestico extends AppCompatActivity {
 
-    ImageView home_7;
-    ImageView categoria_7;
-    ImageView sabias_7;
-    ImageView ubi_7;
-    ImageView estadistica_7;
+    ImageView home_2;
+    ImageView categoria_2;
+    ImageView sabias_2;
 
+    ImageView ubi_2;
+
+    ImageView estadisticas_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estadisticas);
+        setContentView(R.layout.activity_aceite_domestico);
 
-        home_7= findViewById(R.id.home_7);
-        categoria_7=findViewById(R.id.categoria_7);
-        sabias_7= findViewById(R.id.sabias_7);
-        ubi_7= findViewById(R.id.ubi_7);
-        estadistica_7= findViewById(R.id.estadistica_7);
+        home_2= findViewById(R.id.home_2);
+        categoria_2= findViewById(R.id.categoria_2);
+        sabias_2= findViewById(R.id.sabias_2);
+        ubi_2= findViewById(R.id.ubi_2);
+        estadisticas_2= findViewById(R.id.estadisticas_2);
 
 
         Intent regresoHome= new Intent(getApplicationContext(),
                 Home.class);
 
-        home_7.setOnClickListener(new View.OnClickListener() {
+        home_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(regresoHome);
@@ -44,7 +45,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         Intent regresocategoria= new Intent(getApplicationContext(),
                 identificaAceite.class);
 
-        categoria_7.setOnClickListener(new View.OnClickListener() {
+        categoria_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(regresocategoria);
@@ -56,7 +57,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         Intent regresosabias= new Intent(getApplicationContext(),
                 sabias_que.class);
 
-        sabias_7.setOnClickListener(new View.OnClickListener() {
+        sabias_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(regresosabias);
@@ -68,7 +69,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         Intent regresoubi= new Intent(getApplicationContext(),
                 puntos_recoleccion.class);
 
-        ubi_7.setOnClickListener(new View.OnClickListener() {
+        ubi_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(regresoubi);
@@ -79,13 +80,12 @@ public class EstadisticasActivity extends AppCompatActivity {
         Intent regresoestadistica= new Intent(getApplicationContext(),
                 EstadisticasActivity.class);
 
-        estadistica_7.setOnClickListener(new View.OnClickListener() {
+        estadisticas_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(regresoestadistica);
             }
         });
-
 
     }
 }

@@ -19,7 +19,7 @@ public class crearusuario extends AppCompatActivity {
         btnCrearUsuario = findViewById(R.id.btnCrearUsuario);
 
         Intent inicio = new Intent(getApplicationContext(),
-                MainActivity.class);
+                inicio_sesion.class);
 
         btnCrearUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
