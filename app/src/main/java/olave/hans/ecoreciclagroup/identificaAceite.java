@@ -91,6 +91,8 @@ public class identificaAceite extends AppCompatActivity {
 
 
         botonimAutomotriz= findViewById(R.id.imAutomotriz);
+
+
         Intent irautomotriz= new Intent(getApplicationContext(),
                 aceite_hidraulico.class
         );

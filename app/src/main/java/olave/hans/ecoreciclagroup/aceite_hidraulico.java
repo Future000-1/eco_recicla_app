@@ -14,7 +14,6 @@ public class aceite_hidraulico extends AppCompatActivity {
     ImageView categoria_5;
     ImageView sabias_5;
     ImageView ubi_5;
-
     ImageView estadistica_5;
 
 
@@ -41,6 +40,7 @@ public class aceite_hidraulico extends AppCompatActivity {
                 startActivity(regresoHome);
             }
         });
+
 
 
 
@@ -78,6 +78,9 @@ public class aceite_hidraulico extends AppCompatActivity {
                 startActivity(regresoubi);
             }
         });
+
+
+
 
 
         Intent regresoestadistica= new Intent(getApplicationContext(),

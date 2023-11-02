@@ -12,36 +12,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoReciclaGroup"
         tools:targetApi="31">
+
+        <activity android:name=".EstadisticasActivity"
+            android:exported="true"/>
+
         <activity
             android:name=".sabias_que"
-            android:exported="false" />
+            android:exported="true" />
+
         <activity
             android:name=".puntos_recoleccion"
             android:exported="true" />
+
         <activity
             android:name=".aceite_hidraulico"
             android:exported="true" />
+
         <activity
             android:name=".aceite_automotriz"
             android:exported="true" />
+
         <activity
             android:name=".aceite_industria"
             android:exported="true" />
+
         <activity
             android:name=".aceite_domestico"
             android:exported="true" />
+
         <activity
             android:name=".identificaAceite"
             android:exported="true" />
+
         <activity
             android:name=".Home"
             android:exported="true" />
+
         <activity
             android:name=".crearusuario"
             android:exported="true" />
+
         <activity
             android:name=".inicio_sesion"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
