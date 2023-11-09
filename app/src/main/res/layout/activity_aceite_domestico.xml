@@ -155,7 +155,6 @@
         style="@style/titulos"
         android:layout_width="230dp"
         android:layout_height="78dp"
-
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="Tu Huella Ecológica En Casa"
@@ -166,42 +165,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ingresar1"
+        android:id="@+id/ingresocantidad"
         style="@style/botondegradado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
         android:text="Ingresar  Cantidad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ingresa_la_cantidad"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/Ingresa_la_cantidad"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:autoSizeTextType="uniform"
-        android:autofillHints="0"
+        android:layout_width="198dp"
+        android:layout_height="66dp"
         android:ems="10"
-        android:foregroundGravity="center_vertical|center|center_horizontal"
-        android:hint="Ingresa la cantidad"
-        android:inputType="number|numberDecimal|numberSigned"
-        android:justificationMode="none"
-        android:singleLine="true"
+        android:fontFamily="@font/comfortaa_bold"
+        android:hint="Ingresa la cantidad \n en litros"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#0B0909"
         android:textSize="18sp"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boteAceite"
-        app:layout_constraintVertical_bias="0.188"
-        android:fontFamily="@font/comfortaa_bold"/>
+        app:layout_constraintVertical_bias="0.236" />
 
     <TextView
         android:id="@+id/textView5"

@@ -168,23 +168,23 @@
         style="@style/botondegradado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
         android:text="Ingresar  Cantidad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ingresa_la_cantidad"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/Ingresa_la_cantidad"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="205dp"
+        android:layout_height="67dp"
         android:autoSizeTextType="uniform"
         android:autofillHints="0"
         android:ems="10"
+        android:fontFamily="@font/comfortaa_bold"
         android:foregroundGravity="center_vertical|center|center_horizontal"
-        android:hint="Ingresa la cantidad"
+        android:hint="Ingresa la cantidad\n en toneladas"
         android:inputType="number|numberDecimal|numberSigned"
         android:justificationMode="none"
         android:singleLine="true"
@@ -198,8 +198,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boteAceite"
-        app:layout_constraintVertical_bias="0.188"
-        android:fontFamily="@font/comfortaa_bold"/>
+        app:layout_constraintVertical_bias="0.188" />
 
     <TextView
         android:id="@+id/textView5"
