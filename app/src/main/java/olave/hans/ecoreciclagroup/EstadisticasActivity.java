@@ -2,9 +2,11 @@ package olave.hans.ecoreciclagroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class EstadisticasActivity extends AppCompatActivity {
@@ -14,8 +16,10 @@ public class EstadisticasActivity extends AppCompatActivity {
     ImageView sabias_7;
     ImageView ubi_7;
     ImageView estadistica_7;
+    EditText totalAceiteDomestico;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         sabias_7= findViewById(R.id.sabias_7);
         ubi_7= findViewById(R.id.ubi_7);
         estadistica_7= findViewById(R.id.estadistica_7);
+        totalAceiteDomestico=findViewById(R.id.editTexResultado1);
 
 
         Intent regresoHome= new Intent(getApplicationContext(),
@@ -84,8 +89,27 @@ public class EstadisticasActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(regresoestadistica);
             }
+
+
+
+
         });
 
 
+        //FUNCIÓN RECIBIR ESTADISTICAS
+
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            String CantidadAceiteRecibido = extras.getString("datoAceite1");
+
+            if (CantidadAceiteRecibido != null) {
+                totalAceiteDomestico.setText(CantidadAceiteRecibido);
+            } else {
+                // Manejo en caso de que el valor sea nulo
+            }
+        } else {
+            // Manejo en caso de que no haya extras
+        }
     }
 }

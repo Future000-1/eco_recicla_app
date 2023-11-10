@@ -50,7 +50,7 @@
         android:fontFamily="@font/comfortaa_bold"
         android:gravity="center"
         android:inputType="numberSigned"
-        android:text="0L" />
+        android:hint="0L" />
 
     <TextView
         android:id="@+id/textView2"

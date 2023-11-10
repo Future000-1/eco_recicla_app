@@ -27,10 +27,17 @@ public class aceite_domestico extends AppCompatActivity {
 
     EditText numcantidad;
     EditText acumagua;
+
+    EditText acumAceite;
     private int resultadoacumulado=0;
+    private  int resultadoacumulado1=0;
 
     private  int resultadototal=0;
+    private  int resultadoacumulado2=0;
+    EditText acumJabon;
 
+
+    private int resultadototal2=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,8 @@ public class aceite_domestico extends AppCompatActivity {
         numcantidad= findViewById(R.id.Ingresa_la_cantidad);
         acumagua=findViewById(R.id.acumAgua);
         registrarcantidad= findViewById(R.id.ingresocantidad);
+        acumAceite= findViewById(R.id.acumAceite);
+        acumJabon= findViewById(R.id.acumJabon);
 
         Intent regresoHome= new Intent(getApplicationContext(),
                 Home.class);
@@ -111,37 +120,59 @@ public class aceite_domestico extends AppCompatActivity {
         //FUNCION DE LA APP
 
 
-        //ACUMULADO ACEITE
+        ArrayList <Integer> cantidadAceite= new ArrayList<>(); //lista para aceites
 
-        registrarcantidad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        ArrayList <Integer> cantidadagua= new ArrayList<>(); // lista para agua
 
-            }
-        });
+        ArrayList <Integer> cantidadJabon= new ArrayList<>(); //lista para jabon
+
 
 
         //ACUMULADO AGUA
-
-        ArrayList <Integer> cantidadagua= new ArrayList<>();
         registrarcantidad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String valoringresado= numcantidad.getText().toString();
-                  //  int valor= Integer.parseInt(valoringresado);
                     int valor = Integer.parseInt(numcantidad.getText().toString());
                     resultadoacumulado=   valor * 40000;
                     resultadototal= resultadoacumulado + resultadototal;
                     cantidadagua.add(resultadoacumulado);
-                    acumagua.setText(String.valueOf(resultadototal));
+                    acumagua.setText(String.valueOf(resultadototal + " " + "L"));
+
+                    //ACUMULADO ACEITE
+
+                String valoringresado1= numcantidad.getText().toString();
+                    int valor1= Integer.parseInt(numcantidad.getText().toString());
+                    resultadoacumulado1= valor1 + resultadoacumulado1;
+                    cantidadAceite.add(resultadoacumulado1);
+                    acumAceite.setText(String.valueOf(resultadoacumulado1 + " " + "L"));
+
+
+                    //ACUMULADO JABON
+
+                String valoringresado2= numcantidad.getText().toString();
+                    int valor2= Integer.parseInt(numcantidad.getText().toString());
+                    resultadoacumulado2= valor2 * 3;
+                    resultadototal2= resultadoacumulado2 + resultadototal2;
+                    cantidadJabon.add(resultadoacumulado2);
+                    acumJabon.setText(String.valueOf(resultadototal2 + " " + "L"));
+
+
+                    // TRANSFERENCIA DATOS
+
+                Intent intent= new Intent(aceite_domestico.this, EstadisticasActivity.class);
+
+                intent.putExtra("datoAceite1", acumAceite.getText().toString());
+                startActivity(intent);
+
 
 
                 }
         });
 
-        resultadoacumulado = 0;
 
-        //ACUMULADO JABON
+
+
 
     }
 }

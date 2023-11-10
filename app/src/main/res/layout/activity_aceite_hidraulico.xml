@@ -22,7 +22,8 @@
 
     <EditText
         android:id="@+id/acumAceite"
-        android:layout_width="118dp"
+        android:layout_width="132dp"
+        android:textAlignment="center"
         android:layout_height="69dp"
         android:layout_marginTop="12dp"
         android:ems="5"
@@ -64,7 +65,8 @@
 
     <EditText
         android:id="@+id/acumJabon"
-        android:layout_width="wrap_content"
+        android:layout_width="132dp"
+        android:textAlignment="center"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
         android:ems="5"
@@ -80,7 +82,8 @@
 
     <EditText
         android:id="@+id/acumAgua"
-        android:layout_width="wrap_content"
+        android:layout_width="132dp"
+        android:textAlignment="center"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="5"
@@ -201,18 +204,17 @@
         app:layout_constraintVertical_bias="0.188" />
 
     <TextView
-        android:id="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/Ingresa_la_cantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registra tu aporte de hoy"
-        android:textSize="20sp"
+        style="@style/titulos"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/Ingresa_la_cantidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="1.0"
-        android:fontFamily="@font/comfortaa_bold"/>
+        />
 
     <ImageView
         android:id="@+id/sabias_5"

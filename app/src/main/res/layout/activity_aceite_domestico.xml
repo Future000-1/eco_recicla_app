@@ -23,7 +23,7 @@
 
     <EditText
         android:id="@+id/acumAceite"
-        android:layout_width="118dp"
+        android:layout_width="132dp"
         android:layout_height="69dp"
         android:layout_marginTop="12dp"
         android:ems="5"
@@ -35,7 +35,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.668"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/huella_casa" />
+        app:layout_constraintTop_toBottomOf="@+id/huella_casa"
+        android:textAlignment="center"
+        />
 
     <ImageView
         android:id="@+id/imagenAgua"
@@ -65,33 +67,34 @@
 
     <EditText
         android:id="@+id/acumJabon"
-        android:layout_width="wrap_content"
+        android:layout_width="133dp"
         android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:ems="5"
         android:fontFamily="@font/comfortaa_bold"
         android:hint="AcumJabon"
         android:inputType="numberDecimal"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/acumAgua"
-        android:layout_width="wrap_content"
+        android:layout_width="132dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="5"
         android:fontFamily="@font/comfortaa_bold"
         android:hint="AcumAgua"
         android:inputType="numberDecimal"
+        android:textAlignment="center"
         android:textSize="20sp"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintHorizontal_bias="0.67"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -101,6 +104,7 @@
         android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
+        android:textSize="14sp"
         android:text="LITROS DE AGUA NO CONTAMINADA"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +117,7 @@
         style="@style/titulospeque"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="300dp"
         android:gravity="center"
         android:text="LITROS DE ACEITE RECICLADO"
         android:visibility="visible"
@@ -195,17 +199,16 @@
 
     <TextView
         android:id="@+id/textView5"
+        style="@style/titulos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registra tu aporte de hoy"
-        android:textSize="20sp"
+        android:text="Registra tu aporte de hoy :)"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/Ingresa_la_cantidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="1.0"
-        android:fontFamily="@font/comfortaa_bold"/>
+        app:layout_constraintVertical_bias="0.804" />
 
     <ImageView
         android:id="@+id/sabias_2"
