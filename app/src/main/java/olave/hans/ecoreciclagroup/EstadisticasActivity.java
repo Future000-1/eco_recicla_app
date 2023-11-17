@@ -96,6 +96,8 @@ public class EstadisticasActivity extends AppCompatActivity {
         });
 
 
+
+
         //FUNCIÓN RECIBIR ESTADISTICAS
 
         Bundle extras = getIntent().getExtras();

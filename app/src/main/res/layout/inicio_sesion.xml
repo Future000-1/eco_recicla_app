@@ -35,40 +35,46 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:layout_editor_absoluteY="242dp" />
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvNombre"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/redondear_edit"
-        android:ems="10"
-        android:fontFamily="@font/comfortaa_bold"
+        android:layout_height="57dp"
+        android:layout_marginTop="304dp"
         android:hint="NOMBRE DE USUARIO"
-        android:inputType="textEmailAddress"
-        android:paddingStart="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="320dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/diseñoeditText"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvContraseña"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/redondear_edit"
-        android:ems="10"
-        android:fontFamily="@font/comfortaa_bold"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
         android:hint="CONTRASEÑA"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="381dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
-        android:layout_marginTop="20dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNombre"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/diseñoeditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView2"
@@ -81,7 +87,7 @@
         android:layout_marginTop="20dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="453dp"
-
+        android:textSize="16dp"
         />
 
     <TextView
@@ -97,7 +103,9 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="495dp"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        />
 
     <ImageView
         android:id="@+id/imageView3"

@@ -31,41 +31,75 @@
 
         />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edNombre"
         android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
         android:hint="NOMBRE COMPLETO"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/diseñoeditText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
 
-        />
 
-    <EditText
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/diseñoeditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edCorreo"
         android:layout_width="match_parent"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/edNombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        style="@style/diseñoeditText"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
         android:hint="CORREO ELECTRONICO"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edNombre"
 
-    <EditText
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/diseñoeditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edContrasena"
         android:layout_width="match_parent"
-        android:ems="10"
-        android:inputType="textPassword"
+        android:layout_height="57dp"
+        android:layout_marginTop="10dp"
         android:hint="CONTRASEÑA"
-        app:layout_constraintTop_toBottomOf="@+id/edCorreo"
-        style="@style/diseñoeditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edCorreo"
 
-        />
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/diseñoeditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/check"
@@ -77,6 +111,7 @@
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/edContrasena" />
 
     <Button
