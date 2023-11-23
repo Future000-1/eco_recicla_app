@@ -119,6 +119,7 @@ public class aceite_hidraulico extends AppCompatActivity {
 
 
 
+<<<<<<< HEAD
         //FUNCION DE LA APP
 
 
@@ -172,3 +173,12 @@ public class aceite_hidraulico extends AppCompatActivity {
             }
         });
     } }
+=======
+
+
+
+
+
+    }
+}
+>>>>>>> 42fc4af57d6a40bafaf56e050357fbb18c1e3b24
