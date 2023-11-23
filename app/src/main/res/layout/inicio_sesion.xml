@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa_bold"
-        android:text="BIEVENIDO@ :)"
+        android:text="BIEVENID@ :)"
         android:textAlignment="center"
         android:textColor="@color/verde"
         android:textSize="30sp"
@@ -39,18 +39,21 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvNombre"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="60dp"
         android:layout_marginTop="304dp"
         android:hint="NOMBRE DE USUARIO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/diseñoeditText"/>
+            android:layout_height="50dp"
+            style="@style/diseñoeditText"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
