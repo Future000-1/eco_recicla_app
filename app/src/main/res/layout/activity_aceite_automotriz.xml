@@ -157,7 +157,6 @@
         style="@style/titulos"
         android:layout_width="230dp"
         android:layout_height="78dp"
-
         android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="Tu Huella Ecológica En Automotriz"
@@ -168,7 +167,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ingresar1"
+        android:id="@+id/ingresoCantidad"
         style="@style/botondegradado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
