@@ -17,6 +17,8 @@ public class EstadisticasActivity extends AppCompatActivity {
     ImageView ubi_7;
     ImageView estadistica_7;
     EditText totalAceiteDomestico;
+    EditText totalAceiteHidraulico;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -31,6 +33,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         ubi_7= findViewById(R.id.ubi_7);
         estadistica_7= findViewById(R.id.estadistica_7);
         totalAceiteDomestico=findViewById(R.id.editTexResultado1);
+        totalAceiteHidraulico=findViewById(R.id.editTexResultado4);
 
 
         Intent regresoHome= new Intent(getApplicationContext(),
@@ -105,11 +108,15 @@ public class EstadisticasActivity extends AppCompatActivity {
 
             if (CantidadAceiteRecibido != null) {
                 totalAceiteDomestico.setText(CantidadAceiteRecibido);
+
             } else {
                 // Manejo en caso de que el valor sea nulo
             }
         } else {
             // Manejo en caso de que no haya extras
         }
+
     }
 }
+
+
