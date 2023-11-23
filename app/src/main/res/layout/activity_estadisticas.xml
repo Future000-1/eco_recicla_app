@@ -71,7 +71,7 @@
         android:fontFamily="@font/comfortaa_bold"
         android:gravity="center"
         android:inputType="numberSigned"
-        android:hint="OG" />
+        android:text="0G" />
 
     <TextView
         android:id="@+id/textView3"

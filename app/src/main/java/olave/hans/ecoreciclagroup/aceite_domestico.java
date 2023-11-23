@@ -23,6 +23,10 @@ public class aceite_domestico extends AppCompatActivity {
 
     ImageView estadisticas_2;
 
+
+
+
+
     Button registrarcantidad;
 
     EditText numcantidad;
