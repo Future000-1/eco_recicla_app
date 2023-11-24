@@ -20,10 +20,6 @@ public class aceite_automotriz extends AppCompatActivity {
     ImageView ubi_4;
     ImageView estadistica_4;
 
-
-
-
-
     Button miCantidad;
 
     EditText numcantidad;
@@ -138,10 +134,10 @@ public class aceite_automotriz extends AppCompatActivity {
             public void onClick(View view) {
                 String valoringresado= numcantidad.getText().toString();
                 int valor = Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado=   valor * 1000000;
+                resultadoacumulado=   valor * 40;
                 resultadototal= resultadoacumulado + resultadototal;
                 cantidadagua.add(resultadoacumulado);
-                acumagua.setText(String.valueOf(resultadototal + " " + "L"));
+                acumagua.setText(String.valueOf(resultadototal + " " + "T"));
 
                 //ACUMULADO ACEITE
 
@@ -156,10 +152,10 @@ public class aceite_automotriz extends AppCompatActivity {
 
                 String valoringresado2= numcantidad.getText().toString();
                 int valor2= Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado2= valor2 * 3;
+                resultadoacumulado2= valor2 * 3000;
                 resultadototal2= resultadoacumulado2 + resultadototal2;
                 cantidadJabon.add(resultadoacumulado2);
-                acumJabon.setText(String.valueOf(resultadototal2 + " " + "L"));
+                acumJabon.setText(String.valueOf(resultadototal2 + " " + "T"));
 
 
                 // TRANSFERENCIA DATOS
