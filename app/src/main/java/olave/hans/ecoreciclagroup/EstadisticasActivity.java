@@ -46,6 +46,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         totalAceiteLubricacion=findViewById(R.id.editTexResultado4);
 
 
+        // INTENTS DEL MENU
         Intent regresoHome= new Intent(getApplicationContext(),
                 Home.class);
 
@@ -108,17 +109,39 @@ public class EstadisticasActivity extends AppCompatActivity {
 
 
 
-        // RECIBIR LOS FILES Y ARRAYLIST DE LOS ACEITES
 
+
+    // CREAR FILES Y ARRAYLIST
 
         File aceiteDomestico= new File(getFilesDir(), "Domestico_file.txt");
         ArrayList <Integer> lista_domestico= listaDomestico(aceiteDomestico);
 
         totalDomestico(lista_domestico);
 
+        File aceiteIndustria= new File(getFilesDir(),"Industria_File.txt");
+        ArrayList<Integer>lista_industria= listaIndustria(aceiteIndustria);
+
+        totalIndustria(lista_industria);
+
+
+        File aceiteAutomotriz= new File(getFilesDir(),"Automotriz_File.txt");
+        ArrayList<Integer>lista_automotriz= listaAutomotriz(aceiteAutomotriz);
+
+        totalAutomotriz(lista_automotriz);
+
+        File aceiteHidraulico= new File(getFilesDir(),"Hidraulico_File.txt");
+        ArrayList<Integer>lista_Hidraulico= listaHidraulico(aceiteHidraulico);
+
+        totalHidraulico(lista_Hidraulico);
+
+
     }
 
 
+    // RECIBIR LOS FILES Y ARRAYLIST DE LOS ACEITES
+
+
+    // ACEITE DOMESTICO
 
     private void totalDomestico(ArrayList<Integer> list) {
     int total1= 0;
@@ -142,10 +165,8 @@ public class EstadisticasActivity extends AppCompatActivity {
                 int domestico = Integer.parseInt(data[0]);
 
                 list.add(domestico);
+
             }
-
-
-
 
     }catch (Exception e){
         e.printStackTrace();
@@ -157,5 +178,111 @@ public class EstadisticasActivity extends AppCompatActivity {
 
 
 
+    // ACEITE INDUSTRIA
 
+    private void totalIndustria(ArrayList<Integer> list) {
+        int total1= 0;
+
+        for (int i: list) {
+            total1 += i;
+        }
+
+        totalAceiteIndustria.setText(String.valueOf(total1));
+    }
+
+    private ArrayList<Integer> listaIndustria(File aceiteIndustria) {
+        ArrayList<Integer> list = new ArrayList<>();
+        try {
+            FileReader reader1=new FileReader(aceiteIndustria);
+            BufferedReader buffreader1 = new BufferedReader(reader1);
+            String cadena;
+            while((cadena = buffreader1.readLine()) != null){
+                String [] data= cadena.split(",");
+
+                int industria = Integer.parseInt(data[0]);
+
+                list.add(industria);
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
+
+    // ACEITE AUTOMOTRIZ
+    private void totalAutomotriz(ArrayList<Integer> list) {
+        int total1= 0;
+
+        for (int i: list) {
+            total1 += i;
+        }
+
+        totalAceiteDomestico.setText(String.valueOf(total1));
+
+    }
+
+    private ArrayList<Integer> listaAutomotriz(File aceiteAutomotriz) {
+        ArrayList<Integer> list = new ArrayList<>();
+        try {
+            FileReader reader1=new FileReader(aceiteAutomotriz);
+            BufferedReader buffreader1 = new BufferedReader(reader1);
+            String cadena;
+            while((cadena = buffreader1.readLine()) != null){
+                String [] data= cadena.split(",");
+
+                int automotriz = Integer.parseInt(data[0]);
+
+                list.add(automotriz);
+
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return list;
+
+    }
+
+
+    //ACEITE HIDRAULICO
+
+    private void totalHidraulico(ArrayList<Integer> list) {
+        int total1= 0;
+
+        for (int i: list) {
+            total1 += i;
+        }
+
+        totalAceiteDomestico.setText(String.valueOf(total1));
+
+    }
+
+    private ArrayList<Integer> listaHidraulico(File aceiteHidraulico) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        try {
+            FileReader reader1=new FileReader(aceiteHidraulico);
+            BufferedReader buffreader1 = new BufferedReader(reader1);
+            String cadena;
+            while((cadena = buffreader1.readLine()) != null){
+                String [] data= cadena.split(",");
+
+                int hidraulico = Integer.parseInt(data[0]);
+
+                list.add(hidraulico);
+
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return list;
+
+    }
 }

@@ -9,8 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
+
+import olave.hans.ecoreciclagroup.modelos.Model_Aceite_Industria;
 
 public class aceite_industria extends AppCompatActivity {
 
@@ -58,7 +64,7 @@ public class aceite_industria extends AppCompatActivity {
 
 
 
-
+        // INTENTS DEL MENU
 
         Intent regresoHome= new Intent(getApplicationContext(),
                 Home.class);
@@ -120,7 +126,7 @@ public class aceite_industria extends AppCompatActivity {
 
 
 
-        //FUNCION DE LA APP
+        //FUNCION DE LA APP Y FILES
 
 
         ArrayList<Integer> cantidadAceite= new ArrayList<>(); //lista para aceites
@@ -131,10 +137,19 @@ public class aceite_industria extends AppCompatActivity {
 
 
 
-        //ACUMULADO AGUA
+
         registrarCantidad2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (numcantidad.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Debes ingresar la cantidad",
+                            Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                //ACUMULADO AGUA
+
                 String valoringresado= numcantidad.getText().toString();
                 int valor = Integer.parseInt(numcantidad.getText().toString());
                 resultadoacumulado=   valor * 1000000;
@@ -144,29 +159,22 @@ public class aceite_industria extends AppCompatActivity {
 
                 //ACUMULADO ACEITE
 
-                String valoringresado1= numcantidad.getText().toString();
-                int valor1= Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado1= valor1 + resultadoacumulado1;
+                resultadoacumulado1= valor + resultadoacumulado1;
                 cantidadAceite.add(resultadoacumulado1);
                 acumAceite.setText(String.valueOf(resultadoacumulado1 + " " + "G"));
 
 
                 //ACUMULADO JABON
 
-                String valoringresado2= numcantidad.getText().toString();
-                int valor2= Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado2= valor2 * 15;
+                resultadoacumulado2= valor * 15;
                 resultadototal2= resultadoacumulado2 + resultadototal2;
                 cantidadJabon.add(resultadoacumulado2);
                 acumJabon.setText(String.valueOf(resultadototal2 + " " + "L"));
-
-
-                // TRANSFERENCIA DATOS
-
-                Intent intent= new Intent(aceite_industria.this, EstadisticasActivity.class);
-
-                intent.putExtra("datoAceite2", acumAceite.getText().toString());
-                startActivity(intent);
+                    Model_Aceite_Industria acumulador = new Model_Aceite_Industria(resultadoacumulado1 + "",
+                            resultadototal +"", resultadototal2 +"", valor);
+                    registrosaceites(acumulador);
+                    Toast.makeText(getApplicationContext(), "APORTE REGISTRADO ;)", Toast.LENGTH_SHORT).show();
+                }
 
 
 
@@ -175,5 +183,25 @@ public class aceite_industria extends AppCompatActivity {
 
 
 
+    }
+
+    private void registrosaceites(Model_Aceite_Industria acumulador) {
+        File industriafile= new File(getFilesDir(), "Industria_File.txt");
+
+        try {
+            FileWriter writer= new FileWriter(industriafile, true);
+            BufferedWriter buffWriter= new BufferedWriter(writer);
+            buffWriter.write(
+                    acumulador.getAcumAceite()+","+
+                            acumulador.getAcumagua()+","+
+                            acumulador.getAcumJabon()+","+
+                            acumulador.getValorcantidadlitros()
+            );
+
+            buffWriter.newLine();
+            buffWriter.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -174,9 +174,10 @@ public class aceite_domestico extends AppCompatActivity {
                     resultadototal2= resultadoacumulado2 + resultadototal2;
                     cantidadJabon.add(resultadoacumulado2);
                     acumJabon.setText(String.valueOf(resultadototal2 + " " + "L"));
-                    Model_Aceite_Domestico acumulador2=new Model_Aceite_Domestico(resultadoacumulado1 +"",resultadototal + "",
-                            resultadototal2 +"", valor);
+                    Model_Aceite_Domestico acumulador2=new Model_Aceite_Domestico(resultadoacumulado1 +"",
+                            resultadototal + "", resultadototal2 +"", valor);
                     registrarAceite1(acumulador2);
+                    Toast.makeText(getApplicationContext(), "APORTE REGISTRADO ;)", Toast.LENGTH_SHORT).show();
 
                 }
 

@@ -9,8 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
+
+import olave.hans.ecoreciclagroup.modelos.Model_Aceite_Hidraulico;
 
 public class aceite_hidraulico extends AppCompatActivity {
 
@@ -119,7 +125,7 @@ public class aceite_hidraulico extends AppCompatActivity {
 
 
 
-        //FUNCION DE LA APP
+        //FUNCION DE LA APP Y FILES
 
 
         ArrayList<Integer> cantidadAceite= new ArrayList<>(); //lista para aceites
@@ -130,48 +136,71 @@ public class aceite_hidraulico extends AppCompatActivity {
 
 
 
-        //ACUMULADO AGUA
+
         registrarcantidad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String valoringresado= numcantidad.getText().toString();
-                int valor = Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado=   valor * 40;
-                resultadototal= resultadoacumulado + resultadototal;
-                cantidadagua.add(resultadoacumulado);
-                acumagua.setText(String.valueOf(resultadototal + " " + "T"));
 
-                //ACUMULADO ACEITE
+                if (numcantidad.getText().toString().isEmpty()){
 
-                String valoringresado1= numcantidad.getText().toString();
-                int valor1= Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado1= valor1 + resultadoacumulado1;
-                cantidadAceite.add(resultadoacumulado1);
-                acumAceite.setText(String.valueOf(resultadoacumulado1 + " " + "T"));
+                    Toast.makeText(getApplicationContext(), "Debes ingresar la cantidad",
+                            Toast.LENGTH_SHORT).show();
+                }else {
 
 
-                //ACUMULADO JABON
+                    //ACUMULADO AGUA
 
-                String valoringresado2= numcantidad.getText().toString();
-                int valor2= Integer.parseInt(numcantidad.getText().toString());
-                resultadoacumulado2= valor2 * 3000;
-                resultadototal2= resultadoacumulado2 + resultadototal2;
-                cantidadJabon.add(resultadoacumulado2);
-                acumJabon.setText(String.valueOf(resultadototal2 + " " + "T"));
+                    String valoringresado = numcantidad.getText().toString();
+                    int valor = Integer.parseInt(numcantidad.getText().toString());
+                    resultadoacumulado = valor * 40;
+                    resultadototal = resultadoacumulado + resultadototal;
+                    cantidadagua.add(resultadoacumulado);
+                    acumagua.setText(String.valueOf(resultadototal + " " + "T"));
 
-
-                // TRANSFERENCIA DATOS
-
-                Intent intent= new Intent(aceite_hidraulico.this, EstadisticasActivity.class);
-
-                intent.putExtra("datoAceite4", acumAceite.getText().toString());
-                startActivity(intent);
+                    //ACUMULADO ACEITE
 
 
+                    resultadoacumulado1 = valor + resultadoacumulado1;
+                    cantidadAceite.add(resultadoacumulado1);
+                    acumAceite.setText(String.valueOf(resultadoacumulado1 + " " + "T"));
+
+
+                    //ACUMULADO JABON
+
+                    resultadoacumulado2 = valor * 3000;
+                    resultadototal2 = resultadoacumulado2 + resultadototal2;
+                    cantidadJabon.add(resultadoacumulado2);
+                    acumJabon.setText(String.valueOf(resultadototal2 + " " + "T"));
+                    Model_Aceite_Hidraulico acumulador= new Model_Aceite_Hidraulico(resultadoacumulado1 +"",
+                            resultadototal+"", resultadototal2+"", valor);
+                    registrosAceites(acumulador);
+                    Toast.makeText(getApplicationContext(), "APORTE REGISTRADO ;)", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         });
 
+    }
+
+    private void registrosAceites(Model_Aceite_Hidraulico acumulador) {
+        File hidraulicoFile= new File(getFilesDir(),"Hidraulico_File.txt");
+
+        try {
+            FileWriter writer= new FileWriter(hidraulicoFile, true);
+            BufferedWriter buffWriter= new BufferedWriter(writer);
+            buffWriter.write(
+                    acumulador.getAcumaceite()+","+
+                            acumulador.getAcumagua()+","+
+                            acumulador.getAcumjabon()+","+
+                            acumulador.getValorcantidadlitros()
+            );
+
+            buffWriter.newLine();
+            buffWriter.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 
