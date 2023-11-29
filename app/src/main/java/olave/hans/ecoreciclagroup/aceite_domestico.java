@@ -10,8 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import olave.hans.ecoreciclagroup.modelos.Model_Aceite_Domestico;
 
 public class aceite_domestico extends AppCompatActivity {
 
@@ -132,50 +139,75 @@ public class aceite_domestico extends AppCompatActivity {
 
 
 
-        //ACUMULADO AGUA
+        // FUNCION DE LA APP Y FILES
         registrarcantidad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String valoringresado= numcantidad.getText().toString();
+                if (numcantidad.getText().toString().isEmpty()){
+
+                    Toast.makeText(getApplicationContext(), "Debes ingresar la cantidad",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+
+                    //ACUMULADO AGUA
+
+
+                    String valoringresado= numcantidad.getText().toString();
                     int valor = Integer.parseInt(numcantidad.getText().toString());
                     resultadoacumulado=   valor * 40000;
                     resultadototal= resultadoacumulado + resultadototal;
                     cantidadagua.add(resultadoacumulado);
                     acumagua.setText(String.valueOf(resultadototal + " " + "L"));
 
+
+
                     //ACUMULADO ACEITE
 
-                String valoringresado1= numcantidad.getText().toString();
-                    int valor1= Integer.parseInt(numcantidad.getText().toString());
-                    resultadoacumulado1= valor1 + resultadoacumulado1;
+                    resultadoacumulado1= valor + resultadoacumulado1;
                     cantidadAceite.add(resultadoacumulado1);
                     acumAceite.setText(String.valueOf(resultadoacumulado1 + " " + "L"));
 
 
                     //ACUMULADO JABON
 
-                String valoringresado2= numcantidad.getText().toString();
-                    int valor2= Integer.parseInt(numcantidad.getText().toString());
-                    resultadoacumulado2= valor2 * 3;
+                    resultadoacumulado2= valor * 3;
                     resultadototal2= resultadoacumulado2 + resultadototal2;
                     cantidadJabon.add(resultadoacumulado2);
                     acumJabon.setText(String.valueOf(resultadototal2 + " " + "L"));
-
-
-                    // TRANSFERENCIA DATOS
-
-                Intent intent= new Intent(aceite_domestico.this, EstadisticasActivity.class);
-
-                intent.putExtra("datoAceite1", acumAceite.getText().toString());
-                startActivity(intent);
-
-
+                    Model_Aceite_Domestico acumulador2=new Model_Aceite_Domestico(resultadoacumulado1 +"",resultadototal + "",
+                            resultadototal2 +"", valor);
+                    registrarAceite1(acumulador2);
 
                 }
+
+            }
         });
-        
 
 
+
+        }
+
+    private void registrarAceite1(Model_Aceite_Domestico acumAceite) {
+        System.out.println(acumAceite.getAcumAceite());
+        File domesticoFile= new File(getFilesDir(),"Domestico_file.txt");
+
+        try{
+            FileWriter writer= new FileWriter(domesticoFile, true);
+            BufferedWriter buffWriter1= new BufferedWriter(writer);
+            buffWriter1.write(
+                    acumAceite.getAcumAceite()+","+
+                            acumAceite.getAcumAgua()+","+
+                            acumAceite.getAcumJabon()+","+
+                            acumAceite.getValorcantidadlitros()
+
+            );
+            buffWriter1.newLine();
+            buffWriter1.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
+
+
 }

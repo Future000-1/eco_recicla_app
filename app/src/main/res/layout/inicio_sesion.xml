@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearlayout"
+    android:id="@+id/inicio_sesion"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -37,7 +37,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvNombre"
+        android:id="@+id/edNombreusuario"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="304dp"
@@ -59,7 +59,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvContraseña"
+        android:id="@+id/edContraseñausuario"
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:layout_marginTop="10dp"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@id/edNombreusuario"
 
         >
 
@@ -86,7 +86,7 @@
         android:fontFamily="@font/comfortaa_bold"
         android:text="¿Quieres ser un miembro de ECO RECICLA? "
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/tvContraseña"
+        app:layout_constraintTop_toBottomOf="@+id/edContraseñausuario"
         android:layout_marginTop="20dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="453dp"
@@ -120,7 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContraseña"
+        app:layout_constraintTop_toBottomOf="@+id/edContraseñausuario"
         app:srcCompat="@drawable/aceite_1" />
 
     <ImageView
@@ -133,7 +133,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContraseña"
+        app:layout_constraintTop_toBottomOf="@+id/edContraseñausuario"
         app:srcCompat="@drawable/aceite_1" />
 
     <Button

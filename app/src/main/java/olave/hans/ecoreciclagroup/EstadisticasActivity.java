@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+import olave.hans.ecoreciclagroup.modelos.Model_Aceite_Domestico;
+
 public class EstadisticasActivity extends AppCompatActivity {
 
     ImageView home_7;
@@ -97,82 +104,58 @@ public class EstadisticasActivity extends AppCompatActivity {
             }
 
 
-
-
         });
 
 
-        //FUNCIÓN RECIBIR ESTADISTICAS
 
-        //TRANSFERIR DATO ACEITE DOMESTICO
-
-        Bundle extras = getIntent().getExtras();
-
-        if (extras != null) {
-            String CantidadAceiteRecibido = extras.getString("datoAceite1");
-
-            if (CantidadAceiteRecibido != null) {
-                totalAceiteDomestico.setText(CantidadAceiteRecibido);
-            } else {
-                // Manejo en caso de que el valor sea nulo
-            }
-        } else {
-            // Manejo en caso de que no haya extras
-        }
+        // RECIBIR LOS FILES Y ARRAYLIST DE LOS ACEITES
 
 
-        //TRANSFERIR DATO ACEITE INDUSTRIA
+        File aceiteDomestico= new File(getFilesDir(), "Domestico_file.txt");
+        ArrayList <Integer> lista_domestico= listaDomestico(aceiteDomestico);
 
-        Bundle extras2 = getIntent().getExtras();
-
-        if (extras2 != null) {
-            String CantidadAceiteRecibido2 = extras2.getString("datoAceite2");
-
-            if (CantidadAceiteRecibido2 != null) {
-                totalAceiteIndustria.setText(CantidadAceiteRecibido2);
-            } else {
-                // Manejo en caso de que el valor sea nulo
-            }
-        } else {
-            // Manejo en caso de que no haya extras
-        }
-
-
-
-        //TRANSFERIR DATO ACEITE AUTOMOTRIZ
-
-
-        Bundle extras3 = getIntent().getExtras();
-
-        if (extras3 != null) {
-            String CantidadAceiteRecibido3 = extras3.getString("datoAceite3");
-
-            if (CantidadAceiteRecibido3!= null) {
-                totalAceiteAutomotriz.setText(CantidadAceiteRecibido3);
-            } else {
-                // Manejo en caso de que el valor sea nulo
-            }
-        } else {
-            // Manejo en caso de que no haya extras
-        }
-
-
-        //TRANSFERIR DATO ACEITE LUBRICACION
-
-
-        Bundle extras4 = getIntent().getExtras();
-
-        if (extras4 != null) {
-            String CantidadAceiteRecibido4 = extras4.getString("datoAceite4");
-
-            if (CantidadAceiteRecibido4 != null) {
-                totalAceiteLubricacion.setText(CantidadAceiteRecibido4);
-            } else {
-                // Manejo en caso de que el valor sea nulo
-            }
-        } else {
-            // Manejo en caso de que no haya extras
-        }
+        totalDomestico(lista_domestico);
 
     }
+
+
+
+    private void totalDomestico(ArrayList<Integer> list) {
+    int total1= 0;
+
+    for (int i: list) {
+        total1 += i;
+    }
+
+    totalAceiteDomestico.setText(String.valueOf(total1));    }
+
+    private ArrayList<Integer> listaDomestico(File aceiteDomestico) {
+    ArrayList<Integer> list = new ArrayList<>();
+
+    try {
+        FileReader reader1=new FileReader(aceiteDomestico);
+        BufferedReader buffreader1 = new BufferedReader(reader1);
+        String cadena;
+        while((cadena = buffreader1.readLine()) != null){
+            String [] data= cadena.split(",");
+
+                int domestico = Integer.parseInt(data[0]);
+
+                list.add(domestico);
+            }
+
+
+
+
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+
+    return list;
+
+    }
+
+
+
+
 }
