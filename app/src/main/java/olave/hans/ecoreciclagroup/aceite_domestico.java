@@ -12,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -208,7 +210,141 @@ public class aceite_domestico extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+
+
+        //FILES READER PARA LOS CONTADORES
+
+
+        File contadoraceite= new File(getFilesDir(),"Domestico_file.txt");
+
+        File contadoragua= new File(getFilesDir(),"Domestico_file.txt");
+
+        File contadorjabon= new File(getFilesDir(),"Domestico_file.txt");
+
+
+        ArrayList<Integer> lista_aceite=listaaceite(contadoraceite);
+        ArrayList<Integer> lista_agua= listaagua(contadoragua);
+        ArrayList<Integer> lista_jabon= listajabon(contadorjabon);
+
+
+        ContadorTotalaceite(lista_aceite);
+        ContadorTotalAgua(lista_agua);
+        ContadorTotalJabon(lista_jabon);
+
+
+
     }
+
+
+
+
+
+    // ACEITE
+    private void ContadorTotalaceite(ArrayList<Integer> list) {
+        int total=0;
+
+        for (int i: list){
+            total += i;
+        }
+    acumAceite.setText(String.valueOf(total));}
+
+    private ArrayList<Integer> listaaceite(File contador) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        try {
+            FileReader reader= new FileReader(contador);
+            BufferedReader reader2 = new BufferedReader(reader);
+            String cadena;
+            while((cadena = reader2.readLine()) != null){
+                String [] data= cadena.split(",");
+                int aceite = Integer.parseInt(data[0]);
+                list.add(aceite);
+
+            }
+
+            reader2.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
+
+    // AGUA
+
+    private void ContadorTotalAgua(ArrayList<Integer> list) {
+        int total=0;
+
+        for (int i: list){
+            total += i;
+        }
+        acumagua.setText(String.valueOf(total));
+
+    }
+
+
+    private ArrayList<Integer> listaagua(File contador) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        try {
+            FileReader reader= new FileReader(contador);
+            BufferedReader reader2 = new BufferedReader(reader);
+            String cadena;
+            while((cadena = reader2.readLine()) != null){
+                String [] data= cadena.split(",");
+                int agua = Integer.parseInt(data[1]);
+                list.add(agua);
+            }
+
+            reader2.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+
+    //JABON
+
+
+    private void ContadorTotalJabon(ArrayList<Integer> list) {
+        int total=0;
+
+        for (int i: list){
+            total += i;
+        }
+        acumJabon.setText(String.valueOf(total));
+
+    }
+
+    private ArrayList<Integer> listajabon(File contador) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        try {
+            FileReader reader= new FileReader(contador);
+            BufferedReader reader2 = new BufferedReader(reader);
+            String cadena;
+            while((cadena = reader2.readLine()) != null){
+                String [] data= cadena.split(",");
+                int aceite = Integer.parseInt(data[3]);
+                list.add(aceite);
+
+            }
+
+            reader2.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+
+
+    }
+
+
+
 
 
 }

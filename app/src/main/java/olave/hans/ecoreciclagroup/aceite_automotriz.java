@@ -181,7 +181,7 @@ public class aceite_automotriz extends AppCompatActivity {
     }
 
     private void registrosaceites(Model_Aceite_Automotriz acumulador) {
-        File automotrizFile= new File(getFilesDir(), "Automotriz_Files");
+        File automotrizFile= new File(getFilesDir(), "Automotriz_File.txt");
         try {
             FileWriter writer= new FileWriter(automotrizFile, true);
             BufferedWriter buffWriter= new BufferedWriter(writer);

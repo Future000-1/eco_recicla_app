@@ -178,7 +178,7 @@ public class EstadisticasActivity extends AppCompatActivity {
 
 
 
-    // ACEITE INDUSTRIA
+    // ACEITE INDUSTRIAL
 
     private void totalIndustria(ArrayList<Integer> list) {
         int total1= 0;
@@ -221,7 +221,7 @@ public class EstadisticasActivity extends AppCompatActivity {
             total1 += i;
         }
 
-        totalAceiteDomestico.setText(String.valueOf(total1));
+        totalAceiteAutomotriz.setText(String.valueOf(total1));
 
     }
 
@@ -258,7 +258,7 @@ public class EstadisticasActivity extends AppCompatActivity {
             total1 += i;
         }
 
-        totalAceiteDomestico.setText(String.valueOf(total1));
+        totalAceiteIndustria.setText(String.valueOf(total1));
 
     }
 
