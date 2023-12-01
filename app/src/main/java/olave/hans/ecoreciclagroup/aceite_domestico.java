@@ -32,10 +32,6 @@ public class aceite_domestico extends AppCompatActivity {
 
     ImageView estadisticas_2;
 
-
-
-
-
     Button registrarcantidad;
 
     EditText numcantidad;
@@ -48,9 +44,8 @@ public class aceite_domestico extends AppCompatActivity {
     private  int resultadototal=0;
     private  int resultadoacumulado2=0;
     EditText acumJabon;
-
-
     private int resultadototal2=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,18 +185,18 @@ public class aceite_domestico extends AppCompatActivity {
 
         }
 
-    private void registrarAceite1(Model_Aceite_Domestico acumAceite) {
-        System.out.println(acumAceite.getAcumAceite());
+    private void registrarAceite1(Model_Aceite_Domestico acumulador) {
+
         File domesticoFile= new File(getFilesDir(),"Domestico_file.txt");
 
         try{
             FileWriter writer= new FileWriter(domesticoFile, true);
             BufferedWriter buffWriter1= new BufferedWriter(writer);
             buffWriter1.write(
-                    acumAceite.getAcumAceite()+","+
-                            acumAceite.getAcumAgua()+","+
-                            acumAceite.getAcumJabon()+","+
-                            acumAceite.getValorcantidadlitros()
+                    acumulador.getAcumAceite()+","+
+                         acumulador.getAcumAgua()+","+
+                            acumulador.getAcumJabon()+","+
+                            acumulador.getValorcantidadlitros()
 
             );
             buffWriter1.newLine();
@@ -247,7 +242,7 @@ public class aceite_domestico extends AppCompatActivity {
         for (int i: list){
             total += i;
         }
-    acumAceite.setText(String.valueOf(total));}
+    acumAceite.setText(String.valueOf(total+ " L"));}
 
     private ArrayList<Integer> listaaceite(File contador) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -280,13 +275,12 @@ public class aceite_domestico extends AppCompatActivity {
         for (int i: list){
             total += i;
         }
-        acumagua.setText(String.valueOf(total));
+        acumagua.setText(String.valueOf(total+" L"));
 
     }
 
 
     private ArrayList<Integer> listaagua(File contador) {
-
         ArrayList<Integer> list = new ArrayList<>();
 
         try {
@@ -316,7 +310,7 @@ public class aceite_domestico extends AppCompatActivity {
         for (int i: list){
             total += i;
         }
-        acumJabon.setText(String.valueOf(total));
+        acumJabon.setText(String.valueOf(total+ " L"));
 
     }
 
@@ -329,7 +323,7 @@ public class aceite_domestico extends AppCompatActivity {
             String cadena;
             while((cadena = reader2.readLine()) != null){
                 String [] data= cadena.split(",");
-                int aceite = Integer.parseInt(data[3]);
+                int aceite = Integer.parseInt(data[2]);
                 list.add(aceite);
 
             }
