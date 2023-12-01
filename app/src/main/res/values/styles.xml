@@ -61,6 +61,12 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="bordes" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+       <item name="android:radius">20dp</item>
+
+    </style>
+
     
     
     

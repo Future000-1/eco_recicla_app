@@ -1,6 +1,7 @@
 package olave.hans.ecoreciclagroup;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -129,5 +130,7 @@ public class inicio_sesion extends AppCompatActivity {
 
         return lista;
     }
+
+
 }
 

@@ -3,6 +3,7 @@ package olave.hans.ecoreciclagroup;
 import static java.lang.Thread.sleep;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -42,6 +43,7 @@ public class crearusuario extends AppCompatActivity {
         edcorreo = findViewById(R.id.edCorreo);
         edcontrasena = findViewById(R.id.edContrasena);
         check = findViewById(R.id.check);
+
 
         Intent inicio = new Intent(getApplicationContext(),
                 inicio_sesion.class);

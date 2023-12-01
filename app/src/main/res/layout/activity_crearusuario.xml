@@ -42,14 +42,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView1"
 
-
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            style="@style/diseñoeditText"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            style="@style/diseñoeditText"
+
 
             />
 
