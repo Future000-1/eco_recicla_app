@@ -150,7 +150,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         total1 += i;
     }
 
-    totalAceiteDomestico.setText(String.valueOf(total1));    }
+    totalAceiteDomestico.setText(String.valueOf(total1 + " L"));    }
 
     private ArrayList<Integer> listaDomestico(File aceiteDomestico) {
     ArrayList<Integer> list = new ArrayList<>();
@@ -187,7 +187,7 @@ public class EstadisticasActivity extends AppCompatActivity {
             total1 += i;
         }
 
-        totalAceiteIndustria.setText(String.valueOf(total1));
+        totalAceiteIndustria.setText(String.valueOf(total1 + " G"));
     }
 
     private ArrayList<Integer> listaIndustria(File aceiteIndustria) {
@@ -221,7 +221,7 @@ public class EstadisticasActivity extends AppCompatActivity {
             total1 += i;
         }
 
-        totalAceiteAutomotriz.setText(String.valueOf(total1));
+        totalAceiteAutomotriz.setText(String.valueOf(total1 + " T"));
 
     }
 
@@ -258,7 +258,7 @@ public class EstadisticasActivity extends AppCompatActivity {
             total1 += i;
         }
 
-        totalAceiteIndustria.setText(String.valueOf(total1));
+        totalAceiteLubricacion.setText(String.valueOf(total1+ " T"));
 
     }
 
